@@ -16,6 +16,10 @@ repositories {
     mavenCentral()
 }
 
+object Versions {
+    const val awsIotVersion = "1.12.293"
+}
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -30,6 +34,8 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
+
+    implementation("com.amazonaws:aws-java-sdk-iot:${Versions.awsIotVersion}")
 }
 
 tasks.withType<KotlinCompile> {
