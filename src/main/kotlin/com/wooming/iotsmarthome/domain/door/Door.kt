@@ -6,7 +6,7 @@ import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
-@Table
+@Table(name = "door")
 data class Door (
     @Column(unique = true)
     var name: String,

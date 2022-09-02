@@ -17,7 +17,8 @@ repositories {
 }
 
 object Versions {
-    const val awsIotVersion = "1.12.293"
+//    const val awsIotVersion = "1.12.293"
+    const val awsIotDeviceSdkVersion = "1.3.9"
 }
 
 dependencies {
@@ -35,7 +36,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
 
-    implementation("com.amazonaws:aws-java-sdk-iot:${Versions.awsIotVersion}")
+//    implementation("com.amazonaws:aws-java-sdk-iot:${Versions.awsIotVersion}")
+    implementation("com.amazonaws:aws-iot-device-sdk-java:${Versions.awsIotDeviceSdkVersion}")
 }
 
 tasks.withType<KotlinCompile> {

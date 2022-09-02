@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+    rdb:
+        image: postgres
+        container_name: postgres
+        restart: always
+        ports:
+            - "5432:5432"
+        volumes:
+            - .database/postgresql/:/var/lib/postgresql/data
+        environment:
+            POSTGRES_USER: wooming
+            POSTGRES_PASSWORD: pwd
+            POSTGRES_DB: smart_home
+
+    nosql:
+        image: mongo
+        container_name: mongo
+        restart: always
+        ports:
+            - "27017:27017"
+        volumes:
+            - .database/mongodb/:/data/db
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: wooming
+            MONGO_INITDB_ROOT_PASSWORD: pwd
+            MONGO_INITDB_DATABASE: smart_home
