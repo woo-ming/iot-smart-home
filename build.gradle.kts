@@ -17,7 +17,7 @@ repositories {
 }
 
 object Versions {
-//    const val awsIotVersion = "1.12.293"
+    const val awsIotVersion = "1.12.293"
     const val awsIotDeviceSdkVersion = "1.3.9"
     const val kotlinJdslVersion = "2.0.5.RELEASE"
 }
@@ -45,7 +45,7 @@ dependencies {
 
 
     // AWS
-//    implementation("com.amazonaws:aws-java-sdk-iot:${Versions.awsIotVersion}")
+    implementation("com.amazonaws:aws-java-sdk-iot:${Versions.awsIotVersion}")
     implementation("com.amazonaws:aws-iot-device-sdk-java:${Versions.awsIotDeviceSdkVersion}")
 }
 
