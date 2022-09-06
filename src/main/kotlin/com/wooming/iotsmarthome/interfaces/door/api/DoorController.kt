@@ -43,7 +43,7 @@ class DoorController (
         @RequestBody dto: OpenDoorRequestDto
     ): HttpStatus {
 
-        log.info("디버그")
+        log.debug("디버그")
         doorFacade.openDoor(dto.doorId)
 
         return HttpStatus.OK

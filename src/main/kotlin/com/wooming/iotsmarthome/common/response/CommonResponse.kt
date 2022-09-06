@@ -7,7 +7,6 @@ class CommonResponse<T> (
     val errorCode: String? = null,
         ){
 
-
     companion object {
         fun fail(message: String?, errorCode: String): CommonResponse<Any> {
             return CommonResponse(Result.FAIL, message = message, errorCode = errorCode)
