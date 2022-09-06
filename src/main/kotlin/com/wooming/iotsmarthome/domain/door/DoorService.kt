@@ -9,8 +9,9 @@ package com.wooming.iotsmarthome.domain.door
  */
 
 interface DoorService {
-    fun openDoor(doorId: Long)
-    fun closeDoor(doorId: Long)
-    fun lockDoor(doorId: Long)
-    fun unlockDoor(doorId: Long)
+    fun registerDoor(name: String): Door
+    fun openDoor(doorId: Long): Door
+    fun closeDoor(doorId: Long): Door
+    fun lockDoor(doorId: Long): Door
+    fun unlockDoor(doorId: Long): Door
 }

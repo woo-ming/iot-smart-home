@@ -6,9 +6,9 @@ import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
-@Table(name = "door")
+@Table(name = "door", indexes = [Index(columnList = "name", unique = true)])
 data class Door (
-    @Column(unique = true)
+    @Column
     var name: String,
 ) {
     @Id

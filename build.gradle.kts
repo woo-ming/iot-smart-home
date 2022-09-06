@@ -19,23 +19,32 @@ repositories {
 object Versions {
 //    const val awsIotVersion = "1.12.293"
     const val awsIotDeviceSdkVersion = "1.3.9"
+    const val kotlinJdslVersion = "2.0.5.RELEASE"
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
-    runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.springframework.security:spring-security-test")
+//    implementation("org.springframework.boot:spring-boot-starter-security")
+//    testImplementation("org.springframework.security:spring-security-test")
 
+    // Database
+    implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+    runtimeOnly("org.postgresql:postgresql")
+
+    // QueryBuilder
+    implementation("com.linecorp.kotlin-jdsl:kotlin-jdsl-core:${Versions.kotlinJdslVersion}")
+//    implementation("com.linecorp.kotlin-jdsl:hibernate-kotlin-jdsl:${Versions.kotlinJdslVersion}")
+
+
+    // AWS
 //    implementation("com.amazonaws:aws-java-sdk-iot:${Versions.awsIotVersion}")
     implementation("com.amazonaws:aws-iot-device-sdk-java:${Versions.awsIotDeviceSdkVersion}")
 }

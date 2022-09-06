@@ -2,7 +2,7 @@ package com.wooming.iotsmarthome.infrastructure.iot.awsiot
 
 import com.wooming.iotsmarthome.config.AwsMQTTConfig
 import com.wooming.iotsmarthome.infrastructure.iot.IotService
-import com.wooming.iotsmarthome.utill.logger
+import com.wooming.iotsmarthome.common.utill.logger
 import org.springframework.stereotype.Service
 
 @Service

@@ -13,12 +13,7 @@ class WebMvcConfig(
         registry.addMapping("/**")
                 .allowedOrigins("*")
                 .allowedHeaders("*")
-                .allowedMethods(
-                    HttpMethod.GET.name,
-                    HttpMethod.POST.name,
-                    HttpMethod.PUT.name,
-                    HttpMethod.DELETE.name,
-                )
+                .allowedMethods("*")
     }
 
 }

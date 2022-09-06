@@ -9,20 +9,24 @@ class DoorServiceImpl(
     private val doorReader: DoorReader,
     private val doorStore: DoorStore,
 ): DoorService {
-    override fun openDoor(doorId: Long) {
+    override fun registerDoor(name: String): Door {
+        return doorStore.store(Door(name))
+    }
+
+    override fun openDoor(doorId: Long): Door {
         iotService.publishMessage("door/open", doorId.toString())
         TODO("Not yet implemented")
     }
 
-    override fun closeDoor(doorId: Long) {
+    override fun closeDoor(doorId: Long): Door {
         TODO("Not yet implemented")
     }
 
-    override fun lockDoor(doorId: Long) {
+    override fun lockDoor(doorId: Long): Door {
         TODO("Not yet implemented")
     }
 
-    override fun unlockDoor(doorId: Long) {
+    override fun unlockDoor(doorId: Long): Door {
         TODO("Not yet implemented")
     }
 }

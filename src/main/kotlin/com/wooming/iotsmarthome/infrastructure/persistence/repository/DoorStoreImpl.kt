@@ -5,8 +5,10 @@ import com.wooming.iotsmarthome.domain.door.DoorStore
 import org.springframework.stereotype.Component
 
 @Component
-class DoorStoreImpl: DoorStore {
-    override fun storeDoor(door: Door) {
-        TODO("Not yet implemented")
+class DoorStoreImpl(
+    val doorRepository: DoorRepository
+): DoorStore {
+    override fun store(door: Door): Door {
+        return doorRepository.save(door)
     }
 }

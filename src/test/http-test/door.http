@@ -1,0 +1,20 @@
+### register door
+POST http://localhost:8080/api/door
+Content-Type: application/json
+
+{
+  "name": "스마트 도어"
+}
+
+### open door
+POST http://localhost:8080/api/door/open
+Content-Type: application/json
+
+{
+  "doorId": 1
+}
+
+### monitor
+GET http://localhost:8080/api/door
+
+{}

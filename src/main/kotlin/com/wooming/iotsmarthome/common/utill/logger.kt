@@ -1,4 +1,4 @@
-package com.wooming.iotsmarthome.utill
+package com.wooming.iotsmarthome.common.utill
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
