@@ -8,14 +8,14 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class AwsMQTTConfig(
-    @Value("\${aws.iot.mqtt.clientEndPoint}")
+    @Value("\${cloud.aws.iot.endpoint}")
     private val clientEndPoint: String,
-    @Value("\${aws.iot.mqtt.clientId}")
+    @Value("\${cloud.aws.iot.client-id}")
     private val clientId: String,
-    @Value("\${aws.iot.iam.accessKey}")
+    @Value("\${cloud.aws.credentials.access-key}")
     private val accessKey: String,
-    @Value("\${aws.iot.iam.secretKey}")
-    private val secretKey: String,
+    @Value("\${cloud.aws.credentials.secret-key}")
+    private val secretKey: String
 ) {
     private lateinit var client: AWSIotMqttClient
 

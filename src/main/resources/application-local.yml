@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smart_home
+    username: wooming
+    password: pwd
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  pattern:
+    level: "%-5level"

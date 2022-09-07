@@ -1,7 +1,6 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: update
       naming:
         implicit-strategy: com.wooming.iotsmarthome.config.jpa.RdbNamingStrategy
     properties:
@@ -11,16 +10,12 @@ spring:
     open-in-view: true
     generate-ddl: true
 
-  datasource:
-    url: jdbc:postgresql://localhost:5432/smart_home
-    username: wooming
-    password: pwd
-
-aws:
-  iot:
-    mqtt:
-      clientEndPoint: <your-client-end-point>
+cloud:
+  aws:
+    credentials:
+      access-key: <your-iam-access-key>
+      secret-key: <your-iam-secret-key>
+    iot:
+      endpoint: <your-client-end-point>
       clientId: <your-client-id>
-    iam:
-      accessKey: <your-iam-access-key>
-      secretKey: <your-iam-secret-key>
+      region: <your-client-region>

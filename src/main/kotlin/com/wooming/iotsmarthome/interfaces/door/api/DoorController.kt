@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController
 class DoorController (
         private val doorFacade: DoorFacade
         ){
-
     val log = logger()
 
     @GetMapping
@@ -42,10 +41,7 @@ class DoorController (
     fun openDoor(
         @RequestBody dto: OpenDoorRequestDto
     ): HttpStatus {
-
-        log.debug("디버그")
         doorFacade.openDoor(dto.doorId)
-
         return HttpStatus.OK
     }
 }

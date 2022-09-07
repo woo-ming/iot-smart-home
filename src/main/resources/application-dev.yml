@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: <your-database-host>
+    username: <your-database-user>
+    password: <your-database-password>
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+logging:
+  pattern:
+    level: "%-5level"

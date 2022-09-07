@@ -10,12 +10,8 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class AWSIotConfig(
-    @Value("\${aws.iot.mqtt.clientId}")
-    private val clientId: String,
-    @Value("\${aws.iot.iam.accessKey}")
-    private val accessKey: String,
-    @Value("\${aws.iot.iam.secretKey}")
-    private val secretKey: String,
+    @Value("\${cloud.aws.credentials.access-key}") private val accessKey: String,
+    @Value("\${cloud.aws.credentials.secret-key}") private val secretKey: String
 ) {
 
     fun getIotClient(): AWSIot {

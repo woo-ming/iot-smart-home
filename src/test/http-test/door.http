@@ -16,5 +16,6 @@ Content-Type: application/json
 
 ### monitor
 GET http://localhost:8080/api/door
+Content-Type: application/json
 
 {}
