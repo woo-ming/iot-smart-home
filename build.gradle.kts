@@ -20,6 +20,7 @@ object Versions {
     const val awsIotVersion = "1.12.293"
     const val awsIotDeviceSdkVersion = "1.3.9"
     const val kotlinJdslVersion = "2.0.5.RELEASE"
+    const val gsonVersion = "2.9.1"
 }
 
 dependencies {
@@ -28,6 +29,8 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+//    implementation("com.google.code.gson:gson:${Versions.gsonVersion}")
+    implementation("com.google.code.gson:gson:2.9.0")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 //    implementation("org.springframework.boot:spring-boot-starter-security")

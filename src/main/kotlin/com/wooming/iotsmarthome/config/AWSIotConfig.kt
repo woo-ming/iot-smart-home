@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class AWSIotConfig(
-
     @Value("\${aws.iot.mqtt.clientId}")
     private val clientId: String,
     @Value("\${aws.iot.iam.accessKey}")
