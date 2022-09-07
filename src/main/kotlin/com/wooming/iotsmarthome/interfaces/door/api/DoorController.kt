@@ -41,6 +41,7 @@ class DoorController (
     fun openDoor(
         @RequestBody dto: OpenDoorRequestDto
     ): HttpStatus {
+        log.info("dksajdfklsajdlk")
         doorFacade.openDoor(dto.doorId)
         return HttpStatus.OK
     }

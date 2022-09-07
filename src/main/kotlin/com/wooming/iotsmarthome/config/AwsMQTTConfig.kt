@@ -1,8 +1,7 @@
 package com.wooming.iotsmarthome.config
 
-import com.amazonaws.services.iot.client.AWSIotException
-import com.amazonaws.services.iot.client.AWSIotMessage
-import com.amazonaws.services.iot.client.AWSIotMqttClient
+import com.amazonaws.services.iot.client.*
+import com.wooming.iotsmarthome.infrastructure.iot.awsiot.IotTopic
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Configuration
 
@@ -24,6 +23,8 @@ class AwsMQTTConfig(
         // AWS IAM credentials could be retrieved from AWS Cognito, STS, or other secure sources
         client = AWSIotMqttClient(clientEndPoint, clientId, accessKey, secretKey)
         client.connect()
+        val topic = IotTopic("/door/open", AWSIotQos.QOS0)
+        client.subscribe(topic)
     }
 
     fun publish(message: AWSIotMessage, timeout: Long = 3000) {

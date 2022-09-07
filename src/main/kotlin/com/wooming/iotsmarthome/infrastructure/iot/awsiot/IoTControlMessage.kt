@@ -3,12 +3,11 @@ package com.wooming.iotsmarthome.infrastructure.iot.awsiot
 import com.amazonaws.services.iot.client.AWSIotMessage
 import com.amazonaws.services.iot.client.AWSIotQos
 import com.google.gson.Gson
+import org.springframework.stereotype.Component
 import java.time.LocalDateTime
 import java.util.UUID
 
 class IoTControlMessage(topic: String?, qos: AWSIotQos?, payload: String?) : AWSIotMessage(topic, qos, payload) {
-//    constructor(topic: String, qos: AWSIotQos, payload: String): super(topic, qos, payload)
-
     companion object {
         fun of(topic: String, qos: AWSIotQos, payload: Any): AWSIotMessage {
             val gson = Gson()
