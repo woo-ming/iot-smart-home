@@ -6,9 +6,9 @@ import com.linecorp.kotlinjdsl.singleQuery
 import com.wooming.iotsmarthome.common.exception.EntityNotFoundException
 import com.wooming.iotsmarthome.domain.door.Door
 import com.wooming.iotsmarthome.domain.door.DoorReader
-import org.springframework.stereotype.Component
+import org.springframework.stereotype.Repository
 
-@Component
+@Repository
 class DoorReaderImpl(
     private val queryFactory: QueryFactory
 ): DoorReader {

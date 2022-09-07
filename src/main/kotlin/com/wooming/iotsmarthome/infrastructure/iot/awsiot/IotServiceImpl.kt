@@ -1,6 +1,5 @@
 package com.wooming.iotsmarthome.infrastructure.iot.awsiot
 
-import com.amazonaws.services.iot.client.AWSIotMessage
 import com.amazonaws.services.iot.client.AWSIotQos
 import com.wooming.iotsmarthome.config.AwsMQTTConfig
 import com.wooming.iotsmarthome.infrastructure.iot.IotService
@@ -13,16 +12,16 @@ class IotServiceImpl(
 ): IotService {
     val log = logger()
 
-    override fun publishMessage(topic: String, message: String) {
+    override fun publishMessage(topic: String, message: Any) {
         //Connect
         awsMqttConfig.connectToIot()
 
         //Create Message
-        val message = AWSIotMessage(topic, AWSIotQos.QOS0, message)
+        val message = IoTControlMessage.of(topic, AWSIotQos.QOS0, message)
 
         //Publish Message
         awsMqttConfig.publish(message)
 
-        log.debug("Publishing message to topic: $topic")
+        log.info("Publishing message to topic: $topic")
     }
 }
