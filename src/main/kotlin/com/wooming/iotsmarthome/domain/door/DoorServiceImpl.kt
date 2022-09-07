@@ -17,21 +17,31 @@ class DoorServiceImpl(
 
     override fun openDoor(doorId: Long): Door {
         val door =  doorReader.findDoorById(doorId)
-        door.modifyLockStatus(DoorLockStatus.UNLOCK)
-        door.modifyStatus(DoorStatus.OPEN)
+        door.unlock()
+        door.open()
         doorStore.store(door)
         return door
     }
 
     override fun closeDoor(doorId: Long): Door {
-        TODO("Not yet implemented")
+        val door =  doorReader.findDoorById(doorId)
+        door.close()
+        door.lock()
+        doorStore.store(door)
+        return door
     }
 
     override fun lockDoor(doorId: Long): Door {
-        TODO("Not yet implemented")
+        val door =  doorReader.findDoorById(doorId)
+        door.lock()
+        doorStore.store(door)
+        return door
     }
 
     override fun unlockDoor(doorId: Long): Door {
-        TODO("Not yet implemented")
+        val door =  doorReader.findDoorById(doorId)
+        door.unlock()
+        doorStore.store(door)
+        return door
     }
 }

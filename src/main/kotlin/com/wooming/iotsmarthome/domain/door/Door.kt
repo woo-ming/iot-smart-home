@@ -29,12 +29,21 @@ data class Door (
     @LastModifiedDate
     val updatedAt: LocalDateTime = LocalDateTime.now()
 
-    fun modifyStatus(status: DoorStatus) {
-        this.status = status
+
+    fun open() {
+        status = DoorStatus.OPEN
     }
 
-    fun modifyLockStatus(lockStatus: DoorLockStatus) {
-        this.lockStatus = lockStatus
+    fun close() {
+        status = DoorStatus.CLOSE
+    }
+
+    fun lock() {
+        lockStatus = DoorLockStatus.LOCK
+    }
+
+    fun unlock() {
+        lockStatus = DoorLockStatus.UNLOCK
     }
 }
 
